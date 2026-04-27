@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourcePickup
   value: 1
-  lifetime: 30
+  lifetime: 15
+  blinkStart: 10
+  blinkPeriod: 1.2

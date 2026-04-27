@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cdd3c93390a9946ccba19742893fd211, type: 2}
+  - {fileID: 2100000, guid: ae93617c0f67d68468554dd626b1cd2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   damageToShip: 25
   fragmentsOnDestroy: 3
   fragmentImpulse: 4
-  fragmentPrefab: {fileID: 8096142336037990263, guid: d1ebe34c64938441abdab7cff89ffd25, type: 3}
+  fragmentPrefab: {fileID: 0}
   explosionPrefab: {fileID: 2552887946146449097, guid: 0fb600810ae914386b780e5ad5c675dc, type: 3}
-  debrisPrefab: {fileID: 0}
+  debrisPrefab: {fileID: 4182155601998836236, guid: a20d7da7abf3a40a0a09e2ee1a1a4198, type: 3}
+  debrisCount: 1

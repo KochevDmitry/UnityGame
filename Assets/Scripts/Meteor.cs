@@ -10,6 +10,7 @@ public class Meteor : MonoBehaviour
     public GameObject fragmentPrefab;
     public GameObject explosionPrefab;
     public GameObject debrisPrefab;
+    public int debrisCount = 1;
 
     Rigidbody rb;
 
@@ -32,24 +33,36 @@ public class Meteor : MonoBehaviour
         if (explosionPrefab != null) Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         Vector3 baseVel = rb != null ? rb.linearVelocity * 0.5f : Vector3.zero;
+        baseVel.y = 0f;
+        float planeY = transform.position.y;
 
         if (size > 0 && fragmentPrefab != null)
         {
             for (int i = 0; i < fragmentsOnDestroy; i++)
             {
-                Vector3 offset = Random.insideUnitSphere * 0.8f;
-                var frag = Instantiate(fragmentPrefab, transform.position + offset, Random.rotation);
+                Vector2 off2 = Random.insideUnitCircle * 0.8f;
+                Vector3 spawnPos = new Vector3(transform.position.x + off2.x, planeY, transform.position.z + off2.y);
+                var frag = Instantiate(fragmentPrefab, spawnPos, Random.rotation);
                 var m = frag.GetComponent<Meteor>();
                 if (m != null)
                 {
-                    Vector3 dir = (hitDir + Random.insideUnitSphere * 0.8f).normalized;
+                    Vector2 jitter = Random.insideUnitCircle * 0.8f;
+                    Vector3 dir = new Vector3(hitDir.x + jitter.x, 0f, hitDir.z + jitter.y);
+                    if (dir.sqrMagnitude < 0.0001f) dir = new Vector3(Random.value - 0.5f, 0f, Random.value - 0.5f);
+                    dir.Normalize();
                     m.Launch(baseVel + dir * fragmentImpulse);
                 }
             }
         }
         else if (debrisPrefab != null)
         {
-            Instantiate(debrisPrefab, transform.position, Quaternion.identity);
+            int n = Mathf.Max(1, debrisCount);
+            for (int i = 0; i < n; i++)
+            {
+                Vector2 off2 = Random.insideUnitCircle * 0.6f;
+                Vector3 spawnPos = new Vector3(transform.position.x + off2.x, planeY, transform.position.z + off2.y);
+                Instantiate(debrisPrefab, spawnPos, Quaternion.identity);
+            }
         }
 
         Destroy(gameObject);

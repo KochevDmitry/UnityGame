@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cce4373d3dccf4b448123e3ccf72cf38, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -173,6 +173,7 @@ MonoBehaviour:
   fireRate: 5
   missileCooldown: 2
   aimPlaneY: 0
+  missileCost: 1
 --- !u!1 &146016280
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ Camera:
   m_GameObject: {fileID: 259905399}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.02, g: 0.02, b: 0.06, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -377,7 +378,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 200
+  far clip plane: 250
   field of view: 45
   orthographic: 0
   orthographic size: 5
@@ -405,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 259905399}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 28, z: -18}
+  m_LocalPosition: {x: 0, y: 33, z: -22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -721,6 +722,7 @@ MonoBehaviour:
   waveInterval: 15
   perWaveIncrement: 2
   firstWaveDelay: 3
+  maxCount: 10
 --- !u!114 &487618328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,6 +799,7 @@ MonoBehaviour:
   pickupRadius: 1
   repairRadius: 2.2
   repairRate: 20
+  hpPerResource: 10
   idleAnchor: {fileID: 2071095972}
 --- !u!23 &586535917
 MeshRenderer:
