@@ -57,6 +57,12 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# Video recordings (too large for git)
+*.mp4
+*.mov
+*.mkv
+*.avi
+
 # Crashlytics generated file
 crashlytics-build.properties
 

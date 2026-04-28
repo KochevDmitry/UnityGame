@@ -430,7 +430,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 87
   m_IsActive: 1
 --- !u!4 &285024875
 Transform:
@@ -557,7 +557,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 87
   m_IsActive: 1
 --- !u!4 &477981837
 Transform:
@@ -717,12 +717,24 @@ MonoBehaviour:
   spawnRadius: 45
   spawnHeight: 2
   meteorSpeed: 6
+  meteorSpeedMax: 12
   waveNumber: 1
   initialCount: 4
   waveInterval: 15
   perWaveIncrement: 2
   firstWaveDelay: 3
   maxCount: 10
+  finalMaxCount: 20
+  speedRampWaves: 10
+  countRampWaves: 10
+  waveIntervalMin: 9
+  intervalShrinkStart: 28
+  intervalShrinkEnd: 35
+  damageMultStage1: 2
+  damageMultStage2: 3
+  damageRampStart: 35
+  damageRampEnd: 40
+  damageRampEnd2: 50
 --- !u!114 &487618328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +903,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 87
   m_IsActive: 1
 --- !u!4 &1033668703
 Transform:
@@ -1456,7 +1468,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 87
   m_IsActive: 1
 --- !u!4 &1963715594
 Transform:
