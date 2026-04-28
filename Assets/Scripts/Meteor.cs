@@ -73,7 +73,7 @@ public class Meteor : MonoBehaviour
         var ship = c.collider.GetComponentInParent<Ship>();
         if (ship == null) return;
         var section = c.collider.GetComponentInParent<ShipSection>();
-        if (section != null) section.TakeDamage(damageToShip);
+        if (section != null) section.TakeDamage(damageToShip * WaveManager.DamageMultiplier);
         var contact = c.GetContact(0);
         Shatter(contact.point, -contact.normal);
     }
